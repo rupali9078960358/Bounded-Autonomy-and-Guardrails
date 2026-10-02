@@ -1,6 +1,5 @@
 import type { AgentDefinition } from '@anthropic-ai/claude-agent-sdk';
 import { CODE_QUALITY_ANALYZER_PROMPT } from '../prompts/code-quality-analyzer.prompt.js';
-import { CodeQualityResultJSONSchema } from '../types/index.js';
 
 /**
  * Code Quality Analyzer Agent

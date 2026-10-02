@@ -63,8 +63,16 @@ export class CodeReviewOrchestrator {
           // Configure MCP servers for GitHub and ESLint access
           mcpServers: mcpServersConfig,
 
-          // Include Task tool to spawn subagents
-          allowedTools: ['Task', 'Read', 'Grep', 'Glob'],
+          // Include Task tool to spawn subagents and MCP tools for GitHub/ESLint
+          allowedTools: [
+            'Task',
+            'Read',
+            'Grep',
+            'Glob',
+            'mcp__github__pull_request_read',
+            'mcp__github__get_pull_request_files',
+            'mcp__eslint__lint'
+          ],
 
           // Configure structured output for ReviewReport
           outputFormat: {

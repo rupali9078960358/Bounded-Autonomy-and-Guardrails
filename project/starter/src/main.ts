@@ -26,9 +26,10 @@ async function main() {
   }
 
   // Convert and validate PR number
-  const prNumber = parseInt(prStr, 10);
-  if (isNaN(prNumber) || prNumber <= 0) {
-    console.error(`❌ Error: Invalid PR number "${prStr}". Must be a positive integer.`);
+  const prNumber = Number(prStr);
+  if (!/^\d+$/.test(prStr) || !Number.isSafeInteger(prNumber) || prNumber <= 0) {
+    console.error(`❌ Error: Invalid PR number '${prStr}'. Must be a positive integer.`);
+    console.error('Example: npm run dev octocat Hello-World 1');
     process.exit(1);
   }
 
